@@ -2,117 +2,142 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
 import { Helmet } from 'react-helmet';
-
-
+import { Link } from 'react-router-dom';
+import { MessageSquare, Image, Zap, Shield, Bot } from 'lucide-react';
 
 const LandingPage = () => {
     return (
-        <div className="min-h-screen bg-[#edf6f9] font-[Comfortaa] text-gray-800 scroll-smooth">
-            
+        <div className="min-h-screen bg-[#121212] font-sans text-gray-200">
             <Helmet>
-                <meta name="description"
-                    content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
-                <meta name="keywords" content="chatbot, AI, Pollination AI, text generation, image generation" />
+                <meta name="description" content="Welcome to Promptly, your AI-powered assistant for content creation." />
+                <meta name="keywords" content="AI, content creation, chatbot, Promptly" />
                 <meta name="author" content="Aman Raj" />
-                <meta property="og:title" content="Chatbot Promptly - AI-Powered Text & Image Generation" />
-                <meta property="og:description"
-                    content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+                <meta property="og:title" content="Promptly - AI Content Creation" />
+                <meta property="og:description" content="Welcome to Promptly, your AI-powered assistant for content creation." />
                 <meta property="og:image" content="/assets/logo.png" />
                 <meta property="og:url" content="https://promptly.aman-raj.xyz" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <link rel="icon" type="image/png" href="/assets/icon.png" />
                 <link rel="apple-touch-icon" href="/assets/icon.png" />
             </Helmet>
-            
-            
-            <header className="py-4 sm:py-6 px-4 sm:px-10">
-                <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
-                    <div className="flex items-center space-x-3">
-                        <img src={logo} alt="Promptly Logo" className="h-8 sm:h-10" />
-                    </div>
 
-                    {/* Navigation - Hidden on mobile */}
-                    <nav className="hidden sm:block">
-                        <ul className="flex space-x-6 border rounded-full px-4 py-2">
-                            <li><a href="#" className="hover:text-blue-500">Home</a></li>
-                            <li><a href="#features" className="hover:text-blue-500">Features</a></li>
-                            <li><a href="#contact" className="hover:text-blue-500">Contact</a></li>
-                        </ul>
-                    </nav>
 
-                    {/* Auth Buttons */}
-                    <div className="sm:flex hidden  gap-2 sm:gap-4 ">
-                        <motion.button className="px-3 sm:px-4 py-2 bg-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:bg-purple-700 transition-all ease-in-out text-sm sm:text-base">
-                            Login
-                        </motion.button>
-                        <motion.button className="px-3 sm:px-4 py-2 text-black font-semibold rounded-full hover:shadow-lg border transition-all ease-in-out text-sm sm:text-base">
-                            Signup
-                        </motion.button>
+            <div className="min-h-screen bg-gray-950 text-white relative overflow-hidden">
+                {/* Background SVGs */}
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <div className="absolute -top-1/2 -right-1/2 w-[100rem] h-[100rem] bg-gradient-to-b from-purple-500/10 to-transparent rounded-full blur-3xl" />
+                    <div className="absolute -bottom-1/2 -left-1/2 w-[100rem] h-[100rem] bg-gradient-to-t from-blue-500/10 to-transparent rounded-full blur-3xl" />
+                    <svg className="absolute top-0 left-0 w-full h-[40rem] opacity-20" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+
+                {/* Hero Section */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative">
+                    <div className="text-center">
+                        <div className="flex items-center justify-center gap-3 mb-8">
+                            <div className="bg-purple-500/20 p-3 rounded-2xl animate-bounce-slow">
+                                <Bot className="w-8 h-8 text-purple-400" />
+                            </div>
+                            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-bounce-slow">
+                                Proptly
+                            </span>
+                        </div>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
+                            Generate Text & Images with
+                            <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent"> AI Magic</span>
+                        </h1>
+                        <p className="text-xl text-gray-400 mb-8 animate-slide-up-delayed max-w-2xl mx-auto">
+                            Transform your ideas into stunning visuals and compelling content with our advanced AI chatbot.
+                            Fast, creative, and incredibly accurate.
+                        </p>
+                        <button className="group p-6 bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-800 
+            hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10
+            animate-slide-up-delayed-2 inline-flex items-center gap-3">
+                            <div className="w-10 h-10 bg-purple-500/20 rounded-2xl flex items-center justify-center
+              group-hover:scale-110 transition-transform duration-300">
+                                <MessageSquare className="w-5 h-5 text-purple-400" />
+                            </div>
+                            <span className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
+                                Start Chatting
+                            </span>
+                        </button>
                     </div>
                 </div>
-            </header>
 
-            <main className="container mx-auto px-4 sm:px-6">
-                <section className="text-center flex justify-center py-12 sm:py-20">
-                    
-                    <div className='border border-violet-300 px-5 py-5 rounded-full'>
-                        <p className='text-l sm:text-2xl'>
-                            <span className=' text-3xl sm:text-5xl text-purple-600 '>
-                            Turn ideas into content
-                            
-                            </span> 
-                        <br />
-                            AI-powered text and image generation  </p>
+                {/* Features Section */}
+                <div className="relative py-20">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                            Everything you need in one place
+                        </h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <FeatureCard
+                                icon={<MessageSquare className="w-6 h-6 text-purple-400" />}
+                                title="Natural Conversations"
+                                description="Chat naturally with our AI to generate exactly what you need. No complex prompts required."
+                            />
+                            <FeatureCard
+                                icon={<Image className="w-6 h-6 text-purple-400" />}
+                                title="Image Generation"
+                                description="Create stunning visuals from simple text descriptions. Perfect for any creative project."
+                            />
+                            <FeatureCard
+                                icon={<Zap className="w-6 h-6 text-purple-400" />}
+                                title="Lightning Fast"
+                                description="Get results in seconds. No more waiting around for your creative content."
+                            />
+                            <FeatureCard
+                                icon={<Shield className="w-6 h-6 text-purple-400" />}
+                                title="Secure & Private"
+                                description="Your data and conversations are always protected with enterprise-grade security."
+                            />
+                        </div>
                     </div>
+                </div>
 
-                    
-                </section>
-
-                <section id="features" className="py-12 sm:py-20">
-                    <h3 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">Features</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-                        <motion.div
-                            className="p-6 sm:p-8 border border-gray-200 rounded-lg"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <h4 className="text-lg sm:text-xl font-semibold mb-4">AI Assistance</h4>
-                            <p className="text-gray-600 text-sm sm:text-base">Get suggestions tailored to your needs.</p>
-                        </motion.div>
-                        <motion.div
-                            className="p-6 sm:p-8 border border-gray-200 rounded-lg"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <h4 className="text-lg sm:text-xl font-semibold mb-4">Custom Prompts</h4>
-                            <p className="text-gray-600 text-sm sm:text-base">Create prompts for any scenario.</p>
-                        </motion.div>
-                        <motion.div
-                            className="p-6 sm:p-8 border border-gray-200 rounded-lg"
-                            whileHover={{ scale: 1.05 }}
-                        >
-                            <h4 className="text-lg sm:text-xl font-semibold mb-4">Real-Time Results</h4>
-                            <p className="text-gray-600 text-sm sm:text-base">See instant outputs as you type.</p>
-                        </motion.div>
+                {/* Social Proof */}
+                <div className="relative py-16">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <p className="text-sm font-semibold text-purple-400 uppercase tracking-wide mb-8">
+                            Trusted by creators worldwide
+                        </p>
+                        <div className="flex flex-wrap justify-center gap-8 opacity-75">
+                            {['Adobe', 'Figma', 'Canva', 'Notion', 'Slack'].map((brand) => (
+                                <span key={brand} className="text-xl font-bold text-gray-500 hover:text-gray-400 transition-colors">
+                                    {brand}
+                                </span>
+                            ))}
+                        </div>
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <section id="contact" className="py-12 sm:py-20 text-center">
-                    <h3 className="text-3xl sm:text-4xl font-bold mb-4 sm:mb-6">Contact Us</h3>
-                    <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">We'd love to hear from you!</p>
-                    <motion.a
-                        href="mailto:info@promptly.com"
-                        className="inline-block px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 text-sm sm:text-base"
-                        whileHover={{ scale: 1.1 }}
-                    >
-                        Email Us
-                    </motion.a>
-                </section>
-            </main>
-
-            <footer className="py-4 sm:py-6 bg-gray-100 text-center">
-                <p className="text-gray-600 text-sm sm:text-base">&copy; 2025 Promptly. All rights reserved.</p>
-            </footer>
         </div>
     );
 };
 
 export default LandingPage;
+
+function FeatureCard({ icon, title, description }) {
+    return (
+        <div className="group p-6 bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-800 
+      hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+            <div className="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-4 
+        group-hover:scale-110 transition-transform duration-300">
+                {icon}
+            </div>
+            <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+                {title}
+            </h3>
+            <p className="text-gray-400">
+                {description}
+            </p>
+        </div>
+    );
+}

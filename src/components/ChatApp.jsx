@@ -80,11 +80,11 @@ const ChatApp = () => {
         <meta property="og:title" content="Chatbot Promptly - AI-Powered Text & Image Generation" />
         <meta property="og:description"
           content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
-        <meta property="og:image" content="/assets/logo.png" />
+        
         <meta property="og:url" content="https://promptly.aman-raj.xyz" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" type="image/png" href="/assets/icon.png" />
-        <link rel="apple-touch-icon" href="/assets/icon.png" />
+      
+        
+     
       </Helmet>
 
 

@@ -15,11 +15,9 @@ const LandingPage = () => {
                 <meta name="author" content="Aman Raj" />
                 <meta property="og:title" content="Promptly - AI Content Creation" />
                 <meta property="og:description" content="Welcome to Promptly, your AI-powered assistant for content creation." />
-                <meta property="og:image" content="/assets/logo.png" />
+                
                 <meta property="og:url" content="https://promptly.aman-raj.xyz" />
-                <meta name="twitter:card" content="summary_large_image" />
-                <link rel="icon" type="image/png" href="/assets/icon.png" />
-                <link rel="apple-touch-icon" href="/assets/icon.png" />
+                
             </Helmet>
 
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.png';
+import icon from '../assets/icon.png';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { MessageSquare, Image, Zap, Shield, Bot } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
+    const navigate = useNavigate();
     return (
         <div className="min-h-screen bg-[#121212] font-sans text-gray-200">
             <Helmet>
@@ -41,11 +42,12 @@ const LandingPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative">
                     <div className="text-center">
                         <div className="flex items-center justify-center gap-3 mb-8">
-                            <div className="bg-purple-500/20 p-3 rounded-2xl animate-bounce-slow">
-                                <Bot className="w-8 h-8 text-purple-400" />
+                            <div className="bg-purple-500/20 p-2 rounded-2xl animate-bounce-slow">
+                                <img className="w-10 h-10 text-purple-400" src={icon} alt="" />
+                               
                             </div>
-                            <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent animate-bounce-slow">
-                                Proptly
+                            <span className=" text-gradient text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text  animate-bounce-slow  ">
+                                Promptly
                             </span>
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-slide-up">
@@ -56,7 +58,9 @@ const LandingPage = () => {
                             Transform your ideas into stunning visuals and compelling content with our advanced AI chatbot.
                             Fast, creative, and incredibly accurate.
                         </p>
-                        <button className="group p-6 bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-800 
+                        <button 
+                            onClick={() => navigate('/chat')}
+                        className="group p-6 bg-gray-900/50 backdrop-blur-sm rounded-3xl border border-gray-800 
             hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10
             animate-slide-up-delayed-2 inline-flex items-center gap-3">
                             <div className="w-10 h-10 bg-purple-500/20 rounded-2xl flex items-center justify-center

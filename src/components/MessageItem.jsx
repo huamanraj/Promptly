@@ -137,7 +137,7 @@ const MessageItem = ({ message }) => {
                                 };
 
                                 return !inline && match ? (
-                                    <div
+                                    <div 
                                         className="relative"
                                         onMouseEnter={() => setIsCodeHovered(true)}
                                         onMouseLeave={() => setIsCodeHovered(false)}

@@ -42,20 +42,20 @@ function Header({ handleResetChats }) {
               <RiResetLeftFill />
       </button>
       {showConfirm && (
-        <div ref={dialogRef} className="confirmation-dialog absolute z-10 top-12 right-40 bg-[#2d2d2d] text-gray-300 p-4 rounded shadow-lg">
+        <div ref={dialogRef} className="confirmation-dialog absolute z-10 top-12 right-4 sm:right-44 bg-[#2d2d2d] text-gray-300 p-4 rounded shadow-lg">
           <p>want to reset chats?</p>
           <div className="flex justify-end mt-2">
             <button 
               onClick={() => setShowConfirm(false)} 
-              className="mr-2 px-2 py-1 bg-gray-600 rounded"
+              className="mr-2 px-2 py-1  bg-gray-600 rounded"
             >
-                          <MdCancel />
+              <MdCancel size = {30} />
             </button>
             <button 
               onClick={handleConfirmReset} 
               className="px-2 py-1 bg-red-600 rounded"
             >
-                          <GiConfirmed />
+              <GiConfirmed size={30} />
             </button>
           </div>
         </div>

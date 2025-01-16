@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 import LandingPage from './pages/LandingPage';
 
+
 import ChatPage from './pages/Chat';
 export const router = createBrowserRouter([
   {

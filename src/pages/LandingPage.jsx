@@ -1,10 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
+import { Helmet } from 'react-helmet';
+
+
 
 const LandingPage = () => {
     return (
         <div className="min-h-screen bg-[#edf6f9] font-[Comfortaa] text-gray-800 scroll-smooth">
+            
+            <Helmet>
+                <meta name="description"
+                    content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+                <meta name="keywords" content="chatbot, AI, Pollination AI, text generation, image generation" />
+                <meta name="author" content="Aman Raj" />
+                <meta property="og:title" content="Chatbot Promptly - AI-Powered Text & Image Generation" />
+                <meta property="og:description"
+                    content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+                <meta property="og:image" content="/assets/logo.png" />
+                <meta property="og:url" content="https://promptly.aman-raj.xyz" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <link rel="icon" type="image/png" href="/assets/icon.png" />
+                <link rel="apple-touch-icon" href="/assets/icon.png" />
+            </Helmet>
+            
+            
             <header className="py-4 sm:py-6 px-4 sm:px-10">
                 <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
                     <div className="flex items-center space-x-3">

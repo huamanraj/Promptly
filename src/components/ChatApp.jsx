@@ -3,7 +3,8 @@ import ChatInput from "./ChatInput";
 import MessageList from "./MessageList";
 import icon from "../assets/icon.png";
 import Header from "./Header";
-
+import { Helmet } from 'react-helmet';
+ 
 const ChatApp = () => {
   const [messages, setMessages] = useState(() => {
     const savedMessages = localStorage.getItem("chatMessages");
@@ -37,7 +38,7 @@ const ChatApp = () => {
     try {
       const url =
         outputType === "text"
-          ? `https://text.pollinations.ai/${input}`
+          ? `https://text.pollinations.ai/${input}&give respose in markdown`
           : `https://image.pollinations.ai/prompt/${input}`;
       const response = await fetch(url);
       if (outputType === "text") {
@@ -70,16 +71,37 @@ const ChatApp = () => {
 
   return (
     <div className="flex flex-col h-screen bg-[#1E1E1E]">
+
+      <Helmet>
+        <meta name="description"
+          content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+        <meta name="keywords" content="chatbot, AI, Pollination AI, text generation, image generation" />
+        <meta name="author" content="Aman Raj" />
+        <meta property="og:title" content="Chatbot Promptly - AI-Powered Text & Image Generation" />
+        <meta property="og:description"
+          content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+        <meta property="og:image" content="/assets/logo.png" />
+        <meta property="og:url" content="https://promptly.aman-raj.xyz" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" type="image/png" href="/assets/icon.png" />
+        <link rel="apple-touch-icon" href="/assets/icon.png" />
+      </Helmet>
+
+
+
+
+
+
       {/* Header */}
       <Header handleResetChats={handleResetChats} />
 
       {/* Messages */}
-      <main ref={chatContainerRef} className="flex-1 px-4 sm:px-40  overflow-y-auto py-4">
+      <main ref={chatContainerRef} className="flex-1 px-4 sm:px-[25vw]  overflow-y-auto py-4">
         <MessageList messages={messages} isLoading={isLoading} />
       </main>
 
       {/* Input */}
-      <footer className=" px-4 sm:px-40">
+      <footer className=" px-4 sm:px-[25vw]">
         <ChatInput
           handleSendMessage={handleSendMessage}
           input={input}

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import ChatInput from "./ChatInput";
 import MessageList from "./MessageList";
-import icon from "../assets/icon.png";
+
 import Header from "./Header";
 import { Helmet } from 'react-helmet';
  
@@ -38,7 +38,7 @@ const ChatApp = () => {
     try {
       const url =
         outputType === "text"
-          ? `https://text.pollinations.ai/${input}&give respose in markdown`
+          ? `https://text.pollinations.ai/${input}`
           : `https://image.pollinations.ai/prompt/${input}`;
       const response = await fetch(url);
       if (outputType === "text") {
@@ -70,16 +70,28 @@ const ChatApp = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-[#1E1E1E]">
+    <div className="flex flex-col h-screen bg-gray-950">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-1/2 -right-1/2 w-[100rem] h-[100rem] bg-gradient-to-b from-purple-500/10 to-transparent rounded-full blur-3xl" />
+        <div className="absolute -bottom-1/2 -left-1/2 w-[100rem] h-[100rem] bg-gradient-to-t from-blue-500/10 to-transparent rounded-full blur-3xl" />
+        <svg className="absolute top-0 left-0 w-full h-[40rem] opacity-20" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
 
       <Helmet>
         <meta name="description"
-          content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+          content="Discover Promptly, powered by Pollination AI, for seamless text and image generation." />
         <meta name="keywords" content="chatbot, AI, Pollination AI, text generation, image generation" />
         <meta name="author" content="Aman Raj" />
-        <meta property="og:title" content="Chatbot Promptly - AI-Powered Text & Image Generation" />
+        <meta property="og:title" content="Promptly - AI-Powered Text & Image Generation" />
         <meta property="og:description"
-          content="Discover Chatbot Promptly, powered by Pollination AI, for seamless text and image generation." />
+          content="Discover Promptly, powered by Pollination AI, for seamless text and image generation." />
         
         <meta property="og:url" content="https://promptly.aman-raj.xyz" />
       
@@ -111,7 +123,7 @@ const ChatApp = () => {
           setOutputType={setOutputType}
         />
         <div>
-          <p className="text-center text-gray-600 py-2 text-[10px]"> Powered by Prompty © {new Date().getFullYear()}</p>
+          <p className="text-center text-gray-600 py-2 text-[10px]"> Powered by Promptly © {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>

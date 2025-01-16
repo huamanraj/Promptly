@@ -29,20 +29,25 @@ function Header({ handleResetChats }) {
   }, [showConfirm]);
 
   return (
-    <header className="relative py-4 bg-[#252525] ">
+    <header className="relative py-4 bg-gray-900/90 backdrop-blur-lg shadow-sm ">
+      
+      <div className='flex justify-between px-4 sm:px-64 items-end'>
+
+      
       <div className="flex justify-center items-center">
         <img src={icon} alt="App Icon" className="w-8" />
         <h1 className="text-xl ml-2 font-bold text-gradient">Promptly</h1>
       </div>
       <button 
         onClick={() => setShowConfirm(true)} 
-        className="absolute top-1/2 transform -translate-y-1/2 right-4 sm:right-40 text-red-400 bg-gray-600 p-1 rounded-full"
+        className=" text-red-400 bg-gray-600 p-1 rounded-full"
         title='Reset Chat'
       >
               <RiResetLeftFill />
-      </button>
+        </button> </div>
       {showConfirm && (
-        <div ref={dialogRef} className="confirmation-dialog absolute z-10 top-12 right-4 sm:right-44 bg-[#2d2d2d] text-gray-300 p-4 rounded shadow-lg">
+        <div ref={dialogRef} className="confirmation-dialog absolute z-100 top-12 right-4 sm:right-44 bg-gray-900/80 backdrop-blur-sm text-gray-300 p-4 rounded shadow-lg hover:shadow-lg hover:shadow-purple-500/10 border-gray-800 
+            hover:border-purple-500/50">
           <p>want to reset chats?</p>
           <div className="flex justify-end mt-2">
             <button 

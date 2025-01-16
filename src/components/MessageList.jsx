@@ -29,7 +29,7 @@ const MessageList = ({ messages, isLoading, outputType }) => {
                 ) : (
                     <div className="flex items-center space-x-2">
                         <div className="w-5 h-5 border-2 border-gray-400 border-t-transparent rounded-full animate-spin"></div>
-                        <span className="text-sm text-gray-300">Generating image...</span>
+                        <span className="text-sm text-gray-300">Thinking....</span>
                     </div>
                 )}
             </div>
@@ -37,7 +37,7 @@ const MessageList = ({ messages, isLoading, outputType }) => {
     );
 
     return (
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-4 relative z-0">
             {messages.map((msg, index) => (
                 <MessageItem key={index} message={msg} />
             ))}

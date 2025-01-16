@@ -18,7 +18,8 @@ const ChatInput = ({ handleSendMessage, input, setInput, isLoading, outputType, 
 
     return (
         <div
-            className={`w-full bg-[#2D2D2D] shadow-lg hover:bg-[#353535] transition-all p-2 sm:p-4 ${isExpanded ? "rounded-md" : "rounded-full"
+            className={`w-full bg-[#2D2D2D] shadow-lg  p-3 sm:p-4 bg-gray-900/50 backdrop-blur-sm rounded-2xl border border-gray-800 
+                hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10 ${isExpanded ? "rounded-md" : "rounded-full"
                 }`}
         >
             <div className="flex items-end gap-2 sm:gap-4">

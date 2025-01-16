@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+
 import icon from '../assets/icon.png';
 import { Helmet } from 'react-helmet';
-import { Link, Navigate } from 'react-router-dom';
+
 import { MessageSquare, Image, Zap, Shield, Bot } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 const LandingPage = () => {
@@ -117,9 +117,13 @@ const LandingPage = () => {
                             ))}
                         </div>
                     </div>
+                    
                 </div>
+                <p className="text-center font-mono text-sm font-semibold text-purple-400 uppercase tracking-wide p-5">
+                    Build by <a href="https://aman-raj.xyz" target="_blank" rel="noopener noreferrer" className="underline text-purple-100 hover:text-purple-300 ">Aman Raj</a> 🧑‍💻
+                </p>
             </div>
-
+                            
         </div>
     );
 };

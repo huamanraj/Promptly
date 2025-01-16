@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import ChatInput from "./ChatInput";
 import MessageList from "./MessageList";
-
+import { IoImagesOutline } from "react-icons/io5";
+import { LuLetterText } from "react-icons/lu";
 import Header from "./Header";
 import { Helmet } from 'react-helmet';
  
@@ -108,8 +109,29 @@ const ChatApp = () => {
       <Header handleResetChats={handleResetChats} />
 
       {/* Messages */}
-      <main ref={chatContainerRef} className="flex-1 px-4 sm:px-[25vw]  overflow-y-auto py-4">
-        <MessageList messages={messages} isLoading={isLoading} />
+      {/* Messages */}
+      <main ref={chatContainerRef} className="flex-1 px-4 sm:px-[25vw] overflow-y-auto py-4">
+        {messages.length === 0 ? (
+          <div className="flex mt-32 flex-col items-center text-gray-400 py-8 px-4 text-center">
+            <p className="text-lg font-semibold">Welcome to Promptly!</p>
+            <div className="flex items-center gap-2 mt-4">
+              <LuLetterText className="text-xl" />
+              <p className="text-sm sm:text-base">
+                Start typing a prompt in text mode to generate text responses.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              <IoImagesOutline size={20} />
+              <p className="text-sm sm:text-base">
+                Switch to image mode to generate stunning AI images!
+              </p>
+            </div>
+          </div>
+        ) : (
+          <MessageList messages={messages} isLoading={isLoading} />
+        )}
+
+
       </main>
 
       {/* Input */}
